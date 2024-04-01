@@ -7,4 +7,11 @@ class ProcessIndustries(ProcessJobs):
         super().__init__()
 
     def get_unique_industries(self) -> List[str]:
-        pass
+        unicas = set()
+
+        for job in self.jobs_list:
+            industria = job.get('industry')
+            if industria:
+                unicas.add(industria)
+
+        return list(unicas)
