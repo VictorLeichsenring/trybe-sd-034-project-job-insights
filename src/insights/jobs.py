@@ -12,7 +12,11 @@ class ProcessJobs:
             self.jobs_list = list(csv_reader)
 
     def get_unique_job_types(self) -> List[str]:
-        pass
+        job_types = set()
+        for job in self.jobs_list:
+            job_type = job.get('job_type')
+            job_types.add(job_type)
+        return list(job_types)
 
     def filter_by_multiple_criteria(self) -> List[dict]:
         pass
